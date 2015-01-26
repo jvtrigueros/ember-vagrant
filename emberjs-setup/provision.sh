@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Adding ppa repositories
-sudo add-apt-repository ppa:git-core/ppa
+add-apt-repository ppa:git-core/ppa
 
 # Installing Node.js
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install -y nodejs build-essential
+curl -sL https://deb.nodesource.com/setup | bash -
+apt-get install -y nodejs build-essential
 
 # Installing Git
-sudo apt-get install -y git
+apt-get install -y git
 
 # Installing Samba
 apt-get install -y samba samba-common python-glade2 system-config-samba
@@ -30,3 +30,5 @@ service smbd restart
 # Setting up local workspace
 ln -s /samba/ember-workspace /home/vagrant/ember-workspace
 chown -h vagrant:vagrant /home/vagrant/ember-workspace
+
+# TODO: Install ember-cli
