@@ -15,7 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.network "private_network", ip: "192.168.50.50"
 
   # Create a public network, which generally matched to bridged network.
@@ -23,9 +22,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # your network.
   # config.vm.network "public_network"
 
+  # File Provisioning
+  config.vm.provision "file", source: "smb.conf", destination: "smb.conf"
+
   # Shell Provisioning
   config.vm.provision "shell", path: "provision.sh"
-  
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
