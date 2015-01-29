@@ -3,15 +3,23 @@
 # Adding ppa repositories
 add-apt-repository ppa:git-core/ppa
 
-# Installing Node.js
+# Installing Ubuntu build dependencies
 curl -sL https://deb.nodesource.com/setup | bash -
-apt-get install -y nodejs build-essential
-
-# Installing Git
-apt-get install -y git
+apt-get install -y nodejs git build-essential automake
 
 # Installing Samba
 apt-get install -y samba samba-common python-glade2 system-config-samba
+
+# Install ember-cli and bower
+npm install -g ember-cli bower
+
+# Install watchman
+git clone https://github.com/facebook/watchman.git /opt/watchman
+cd /opt/watchman
+./autogen.sh
+./configure
+make
+make install
 
 # Setting up Samba
 share=/samba/ember-workspace
@@ -30,5 +38,3 @@ service smbd restart
 # Setting up local workspace
 ln -s /samba/ember-workspace /home/vagrant/ember-workspace
 chown -h vagrant:vagrant /home/vagrant/ember-workspace
-
-# TODO: Install ember-cli
