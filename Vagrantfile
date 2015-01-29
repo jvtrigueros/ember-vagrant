@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 35729, host: 35729
 
   config.vm.hostname = "ember-server"
+  config.vm.network "public_network", ip: "192.168.0.160"
 
   # File Provisioning
   config.vm.provision "file", source: "smb.conf", destination: "smb.conf"
