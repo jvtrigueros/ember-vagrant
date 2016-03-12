@@ -5,7 +5,7 @@ add-apt-repository ppa:git-core/ppa
 
 # Installing Ubuntu build dependencies
 curl -sL https://deb.nodesource.com/setup | bash -
-apt-get install -y nodejs git build-essential automake
+apt-get install -y nodejs git build-essential automake python-dev
 
 # Installing Samba
 apt-get install -y samba samba-common python-glade2 system-config-samba
