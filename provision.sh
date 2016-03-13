@@ -4,7 +4,7 @@
 add-apt-repository ppa:git-core/ppa
 
 # Installing Ubuntu build dependencies
-curl -sL https://deb.nodesource.com/setup | bash -
+curl -sL https://deb.nodesource.com/setup_0.12 | bash -
 apt-get install -y nodejs git build-essential automake python-dev
 
 # Installing Samba
@@ -20,6 +20,8 @@ cd /opt/watchman
 ./configure
 make
 make install
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 
 # Setting up Samba
 share=/samba/ember-workspace
