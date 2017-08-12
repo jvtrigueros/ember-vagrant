@@ -1,7 +1,7 @@
 # ember-vagrant
 Vagrant configuration to get started writing Ember apps.
 
-Explanation in my [blog](http://blog.jvtrigueros.com/ember-cli-development-in-windows/).
+Explanation in my [blog](http://blog.jvtrigueros.com/2015/07/19/ember-cli-development-in-windows/).
 
 ## Getting Started
 
